@@ -28,6 +28,17 @@ git clone https://github.com/TaXi0k/add_to_path
 cd add_to_path
 uv tool install .
 ```
+<br><br>
+
+# 🐍 Uninstallation
+
+To uninstall this app run:
+
+```bash
+uv tool uninstall add_to_path
+```
+
+additionally if you installed it by manual download you might also want to remove the cloned directory.
 
 <br><br>
 

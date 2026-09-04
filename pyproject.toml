@@ -1,0 +1,12 @@
+[project]
+name = "add-to-path"
+version = "0.1.0"
+description = "A lightweight and simple script adding paths to PATH for you!"
+readme = "README.md"
+requires-python = ">=3.14"
+dependencies = [
+    "argparse>=1.4.0",
+]
+
+[project.scripts]
+adtp = "main:main"

@@ -79,19 +79,12 @@ def append_to_paths_file(path):
             print(Style.BRIGHT + Fore.GREEN + f" {path} already in $PATH!")
 
 
-def source_rc_file(shell):
-    if shell == "bash":
-        os.system("source ~/.bashrc")
-    if shell == "zsh":
-        os.system("source ~/.zshrc")
-
 
 def main():
     create_paths_file()
     shell = check_shell()
     link_in_rc_file(shell)
     append_to_paths_file( path_from_arg() )
-    source_rc_file(shell)
 
 
 if __name__ == "__main__":

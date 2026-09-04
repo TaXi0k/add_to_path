@@ -2,15 +2,13 @@
 
 import os
 import argparse
+from colorama import Fore, Back, Style
 
 def create_paths_file():
     dir_path = os.path.expanduser("~/.config/add_to_path/")
     file_path = os.path.expanduser("~/.config/add_to_path/paths")
 
-    if os.path.isfile(file_path):
-        print(file_path, "exist!")
-    else:
-        print(file_path, "doesn't exist!")
+    if not os.path.isfile(file_path):
         os.makedirs(dir_path, exist_ok=True)
         open(file_path, "a").close() # create file
 
@@ -55,6 +53,10 @@ def append_to_paths_file(path):
         if entry not in file.read():
             with open(paths_file_path, "a") as file:
                 file.write(entry)
+                print(Style.BRIGHT + Fore.GREEN + f" Successfully added {path} to $PATH!")
+        else:
+            print(Style.BRIGHT + Fore.GREEN + f" {path} already in $PATH!")
+    
 
 def main():
     create_paths_file()

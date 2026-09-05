@@ -89,6 +89,50 @@ To me, I did this. I don't know why I even wrote this very line xd.
 
 <br><br>
 
-# 📗 License
+# 📗 License and Copyright Notice
 
-[to be added after pushing to GitHub]
+**© 2026 TaXi0k**
+
+This project is distributed under **CC BY-NC 4.0** license. This means:
+
+### 💚 You may:
+* Use the code in your own projects
+* Modify it, fork it, rewrite it
+* Share it anywhere (GitHub, Discord etc.)
+* Distribute it for free
+* Accept **optional donations** (Ko-fi, BuyMeACoffee, tips)
+
+### 🌱 You must:
+* Give proper attribution (author + link to the original repo)
+* Mention that it's licensed under **CC BY-NC 4.0**
+* Indicate if you made any modifications
+
+### 🟥 You may not:
+* Sell this code
+* Sell projects that include this code
+* Sell modified versions of this code
+* Use this code in paid products, services, or subscriptions
+* Offer premium/commercial versions based on this code
+
+### 🟩 Commercial use is only allowed if:
+You write **entirely new code from scratch**, without copying or deriving from this project - i.e. a proper **[clean room implementation](https://en.wikipedia.org/wiki/Clean-room_design)**.
+
+### For more info check [LICENSE](/LICENSE).
+
+<br><br>
+
+# 🌿 Attribution Example
+
+If you use, modify or share this project, please include an attribution similar to the following:
+
+**Based on:** "add_to_path" by TaXi0k<br>
+**Original repository:** https://github.com/TaXi0k/add_to_path<br>
+**Licensed under:** CC BY-NC 4.0<br>
+**Modifications:** none / minor changes / custom additions
+
+### 💚 Notes:
+
+* Of course you can phrase that differently - it just needs to contain these information or even more if you are that kind.
+* A link to original repo is required whenever possible.
+* Mentioning modifications is of course only required only if you actually changed the code.
+* But really let's just be people and respect each other's work :3

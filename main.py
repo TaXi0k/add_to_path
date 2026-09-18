@@ -16,12 +16,22 @@ def create_paths_file():
 def check_shell():
     bash_path = os.path.expanduser("~/.bashrc")
     zsh_path = os.path.expanduser("~/.zshrc")
+    valid_shell = False
     
     if os.path.isfile(bash_path):
+        valid_shell = True
         return "bash"
-    elif os.path.isfile(zsh_path):
-        return "zsh"
-    else:
+
+    if os.path.isfile(zsh_path):
+        is_bash_present = valid_shell
+        valid_shell = True
+        
+        if is_bash_present:
+            return "both"
+        else:
+            return "zsh"
+
+    if not valid_shell:
         print(Style.BRIGHT + Fore.RED + f" Seems you are using shell other than ZSH or BASH. Only these two are supported :(")
         exit()
 
@@ -30,7 +40,7 @@ def link_in_rc_file(shell):
     bash_path = os.path.expanduser("~/.bashrc")
     zsh_path = os.path.expanduser("~/.zshrc")
 
-    link_line = "\n# Created by add_to_path\nsource ~/.config/add_to_path/paths"
+    link_line = "\n# Created by add_to_path\n[[ -f ~/.config/add_to_path/paths ]] && source ~/.config/add_to_path/paths"
 
     if shell == "bash":
         with open(bash_path, "r") as file:
@@ -49,6 +59,29 @@ def link_in_rc_file(shell):
         
         if link_line not in content:
             with open(zsh_path, "a") as file:
+                if content.endswith("\n"):
+                    file.write(f"{link_line}\n")
+                else:
+                    file.write(f"\n{link_line}\n")
+    
+    if shell == "both":
+        # Add to zsh
+        with open(zsh_path, "r") as file:
+            content = file.read()
+        
+        if link_line not in content:
+            with open(zsh_path, "a") as file:
+                if content.endswith("\n"):
+                    file.write(f"{link_line}\n")
+                else:
+                    file.write(f"\n{link_line}\n")
+        
+        # Add to bash
+        with open(bash_path, "r") as file:
+            content = file.read()
+        
+        if link_line not in content:
+            with open(bash_path, "a") as file:
                 if content.endswith("\n"):
                     file.write(f"{link_line}\n")
                 else:

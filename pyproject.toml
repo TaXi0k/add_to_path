@@ -12,3 +12,6 @@ dependencies = [
 [project.scripts]
 adtp = "main:main"
 add_to_path = "main:main"
+
+[tool.hatch.build]
+artifacts = ["main.py"]
